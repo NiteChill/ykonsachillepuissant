@@ -1,0 +1,663 @@
+@import 'variable';
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@keyframes logo2 {
+    0%{margin: 0 120px 200px 45px;}
+    90%{margin: 0 120px 200px 117.5px;}
+    100%{margin: 0 120px 200px 117.5px;}
+}
+
+@keyframes logo3 {
+    0%{margin: 0 120px 200px 45px;}
+    90%{margin: 0 120px 200px 190px;}
+    100%{margin: 0 120px 200px 190px;}
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    background: $main-color;
+    flex-direction: column;
+}
+
+.background{
+    position: absolute;
+    width: 100vw;
+    height: 85vh;
+    border-radius: 0 0 100px 0;
+    backdrop-filter: blur(.3rem);
+    z-index: -1;
+    transition: all 1s;
+}
+
+.head{
+    display: flex;
+    width: 100%;
+    height: 85vh;
+    margin-bottom: 15vh;
+    background-image: url(./img/ykons_all.webp);
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(1.7rem);
+    border-radius: 0 0 100px 0;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+    &_logo{
+        display: flex;
+        flex-direction: column;
+        &_ykons-logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &_part{
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                border: 3px solid $font-color;
+                transform: rotate(45deg);
+                &_nbr1{
+                    margin: 0 120px 200px 45px;
+                    transition: all .1s;
+                }
+                &_nbr2{
+                    margin: 0 120px 200px 45px;
+                    transition: all .1s;
+                    animation-name: logo2;
+                }
+                &_nbr3{
+                    margin: 0 120px 200px 45px;
+                    transition: all .1s;
+                    animation-name: logo3;
+                }
+            }
+        }
+        &_ykons-main-title{
+            color: $font-color;
+            font-family: $font-police;
+            font-size: 5.5rem;
+            font-weight: 400;
+        }
+    }
+}
+
+.music{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    &_img{
+        display: flex;
+        border-radius: 35px;
+    }
+    &_main{
+        &_txt{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 0;
+            overflow: hidden;
+            transition: height .3s ease-in-out;
+            &_main{
+                color: $font-color;
+                font-size: 3rem;
+                font-family: $font-police;
+                display: flex;
+            }
+            &_secondary{
+                color:$font-color-secondary;
+                font-size: 1.5rem;
+                font-family: $font-police-secondary;
+                display: flex;
+                margin-top: -.8rem;
+            }
+        }
+        &_player{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            &_play-button{
+                display: flex;
+                color: $font-color;
+                margin-top: 3rem;
+                cursor: pointer;
+            }
+            &_timeline{
+                display: flex;
+                width: 320px;
+                height: 10px;
+                background: $font-color;
+                margin-top: 1.7rem;
+                border-radius: 10px;
+                overflow: hidden;
+                &_part2{
+                    border-radius: 10px;
+                    display: flex;
+                    width: 35%;
+                    height: 10px;
+                    background: $font-color-secondary;
+                }
+            }
+        }
+    }
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    background: $font-color;
+    background-image: linear-gradient($font-color-secondary, $font-color-secondary);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background: $font-color-secondary;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.about{
+    display: flex;
+    align-self: center;
+    width: 78%;
+    background: $font-color;
+    flex-direction: column;
+    margin: 6rem 0 0 0;
+    padding: 1rem 6% 1rem 6%;
+    border-radius: 100px 0;
+    z-index: 1;
+    &_title{
+        font-family: $font-police;
+        color: $font-color-rare;
+        font-size: 4rem;
+        margin: 1rem 0 1rem 0;
+        height: 0;
+        overflow: hidden;
+    }
+    &_txt{
+        display: flex;
+        text-align: justify;
+        flex-direction: row;
+        width: 100%;
+        color: $font-color-rare2;
+        margin: 0 0 3rem 0;
+        overflow-x: hidden;
+        font-family: $font-police;
+        &_1{
+            width: 100%;
+            display: flex;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        &_2{
+            width: 100%;
+            display: flex;
+            flex-grow: 1;
+            flex-shrink: 0;
+        }
+        &_3{
+            width: 100%;
+            display: flex;
+            flex-grow: 1;
+            flex-shrink: 0;
+        }
+    }
+    &_reading-menu{
+        display: flex;
+        align-self: center;
+        gap: 2rem;
+        color: $font-color-rare2;
+        &_txt{
+            font-family: $font-police;
+            color: $font-color-rare2;
+            margin-left: 0;
+            transition: all .5s;
+        }
+        &_left-button{
+            opacity: .5;
+        }
+        &_right-button{
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+}
+
+.photo_video{
+    display: flex;
+    flex-direction: raw;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+.video{
+    margin-top: -65px;
+    padding-top: 170px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $font-color;
+    width: 100%;
+    flex-direction: column;
+    margin-left: 0;
+    transition: all .3s;
+    &_menu{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        margin: 0 0 0 0;
+        i{
+            margin: 1rem 0 0 2rem;
+            color: $main-color;
+            opacity: 1;
+            transition: all .2s;
+            align-self: center;
+        }
+        & i:hover{
+            cursor: pointer;
+            opacity: 50%;
+        }
+    }
+    &_img-mask{
+        margin-bottom: -110px;
+        display: flex;
+        width: 100%;
+        z-index: 0;
+        height: 200px;
+    }
+    &_main{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        &_txt{
+            margin-left: 5%;
+            font-family: $font-police;
+            color: $main-color;
+            font-size: 4.3rem;
+            align-self: flex-start;
+            height: 0;
+            overflow: hidden;
+        }
+        &_all-video{
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: raw;
+            &_clip{
+                flex-grow: 0;
+                flex-shrink: 0;
+                display: flex;
+                width: 90%;
+                margin: 2rem 5% 0 5%;
+                border-radius: 20px;
+            }
+        }
+    }
+    &_reading-menu{
+        margin: 1rem 0 1rem 0;
+        display: flex;
+        align-self: center;
+        color: $font-color-rare2;
+        align-items: center;
+        gap: 0.5rem;
+        &_part{
+            width: 30px;
+            height: 8px;
+            border: 4px solid $main-color;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+.photo{
+    margin-top: -65px;
+    padding-top: 170px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 1;
+    background: $font-color;
+    &_menu{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-end;
+        margin: 0 0 0 0;
+        i{
+            margin: 3rem 2rem 0 0;
+            color: $main-color;
+            opacity: 1;
+            transition: all .2s;
+            z-index: 10;
+            &:hover{
+                cursor: pointer;
+                opacity: 50%;
+            }
+        }
+    }
+    &_main{
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+        width: 90%;
+        height: 100%;
+        border-radius: 30px;
+        overflow: hidden;
+        margin: 1rem 0 2rem 0;
+        &_txt{
+            margin-right: 5%;
+            font-family: $font-police;
+            color: $main-color;
+            font-size: 4.3rem;
+            align-self: flex-start;
+        }
+        &_1{
+            background-image: url(./img/ykons_1.webp);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            width: 48.5%;
+            height: 48.5%;
+            background-color: black;
+            margin: 0 3% 3% 0;
+            transition: width .3s, height .3s, background-image 1s;
+        }
+        &_2{
+            background-image: url(./img/ykons_2.webp);
+            background-size: cover;
+            background-position: bottom;
+            width: 48.5%;
+            height: 48.5%;
+            background-color: black;
+            transition: width .3s, height .3s, background-image 1s;
+        }
+        &_3{
+            background-image: url(./img/ykons_3.webp);
+            background-size: cover;
+            background-position: center;
+            width: 48.5%;
+            height: 48.5%;
+            background-color: black;
+            margin: 0 3% 0 0;
+            transition: width .3s, height .3s, background-image 1s;
+        }
+        &_4{
+            background-image: url(./img/ykons_4.webp);
+            background-size: cover;
+            background-position: center;
+            width: 48.5%;
+            height: 48.5%;
+            background-color: black;
+            transition: width .3s, height .3s, background-image 1s;
+        }
+    }
+}
+
+.about_txt_1{
+    margin-left: 0;
+    transition: all .2s;
+}
+
+.clip_1{
+    margin-left: 5%;
+    transition: all .4s;
+}
+
+.clip_6{
+    border: 2px solid $main-color;
+}
+
+.selected{
+    border: 3px solid $main-color;
+}
+
+.date{
+    margin:4rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    color: $font-color;
+    flex-direction: column;
+    width: 100%;
+    &_title{
+        font-family: $font-police;
+        font-size: 4.3rem;
+        align-self: center;
+        height: 0;
+        overflow: hidden;
+    }
+    &_main{
+        gap: 5px 0;
+        margin: 2rem 0 0 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        &_line{
+            align-self: center;
+            width: 90%;
+            height: 3px;
+            background: $font-color;
+            border-radius: 5px;
+        }
+        &_part{
+            gap: 0 5px;
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            margin: 0 0 0 5%;
+            font-size: 1.15rem;
+            font-family: $font-police;
+            justify-content: space-between;
+            transform: translateX(-110%);
+            &_location{
+                color: $font-color;
+            }
+            a{
+                text-decoration: none;
+                color: $font-color;
+            }
+        }
+    }
+}
+
+.contact{
+    margin: 4rem 0 0 0;
+    padding: 0 0 4rem 0;
+    display: flex;
+    font-family: $font-police;
+    color: $main-color;
+    width: 100%;
+    background: $font-color;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &_title{
+        margin: 4rem 0 0 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 4.3rem;
+        height: 0;
+        overflow: hidden;
+    }
+    &_main{
+        margin: 1rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &_title{
+            display: flex;
+            font-size: 2.2rem;
+        }
+        &_info-main{
+            color: $font-color-secondary;
+            display: flex;
+            font-size: 1.3rem;
+        }
+        &_info{
+            color: $font-color-secondary;
+            display: flex;
+            font-size: .8rem;
+        }
+    }
+}
+
+.reseaux{
+    align-self: flex-end;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #4267b2;
+    padding: 20px 20px 20px 20px;
+    width: 250px;
+    border-radius: 12px;
+    margin: 30px 30px 0 0;
+    clip-path: circle(6% at 89.5% 7.5%);
+    transition: all 0.5s ease-in-out;
+    z-index: 100;
+    span{
+        float: right;
+        align-self: flex-end;
+        color: $font-color;
+    }
+    a{
+        display: flex;
+        flex-direction: raw;
+        color: $font-color;
+        font-family: $font-police-last;
+        text-decoration: none;
+        margin: 12px 0 0 0;
+        gap: 5px;
+        &:hover i{
+            transform: scale(1.6);
+        }
+        i{
+            margin-top: 14px;
+            display: flex;
+            flex-direction: raw;
+            color: $font-color;
+            transition: all 0.2s ease-in-out;
+        }
+        p{
+            margin-left: 10px;
+            font-family: $font-police-last;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .music{
+        flex-direction: row;
+        &_main{
+            &_txt{
+                margin: -9rem 0 0 0;
+                &_main{
+                    align-self: flex-start;
+                    justify-content: flex-start;
+                    margin: 0 0 0 4rem;
+                }
+                &_secondary{
+                    align-self: flex-start;
+                    justify-content: flex-start;
+                    margin: 0 0 0 4rem;
+                }
+            }
+            &_player{
+                margin: 0 0 0 2.6rem;
+                transform: translateY(7rem);
+            }
+        }
+    }
+    .date{
+        &_main{
+            &_part{
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .head_logo_ykons-main-title{
+        font-size: 8rem;
+    }
+    .music{
+        transform: scale(1.2);
+        margin: 2rem 0 2rem 0;
+    }
+    .about{
+        &_title{
+            font-size: 6rem;
+        }
+        &_txt{
+            font-size: 1.5rem;
+        }
+    }
+    .video{
+        &_main{
+            &_txt{
+                font-size: 6rem;
+            }
+        }
+        &_reading-menu{
+            &_part{
+                width: 50px;
+                height: 16px;
+                border-radius: 20px;
+                border: 8px solid $main-color;
+            }
+        }
+    }
+    .selected{
+        border: 4px solid $main-color;
+        width: 50px;
+        height: 20px;
+    }
+    .date{
+        &_title{
+            font-size: 6rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .about_title{
+        font-size: 8rem;
+    }
+    .about_txt{
+        font-size: 2rem;
+    }
+}
+
+.date_main_part a:hover{
+    text-decoration: underline;
+}
